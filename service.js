@@ -2,7 +2,7 @@ var app = angular.module('userProfiles'); //wow
 
 app.service('mainService', function($http) {
 
-	var data = [
+	/*var data = [
     {
         "id": 1,
         "first_name": "george",
@@ -21,10 +21,14 @@ app.service('mainService', function($http) {
         "last_name": "bluth",
         "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
     }
-  ];
+  ];*/
 
   this.getUsers = function() {
-    return data;
+    return $http({
+        method: 'GET',
+        url: 'http://reqr.es/api/users?page=1'
+
+    });
   };
 
 
